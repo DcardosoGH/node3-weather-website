@@ -10,9 +10,9 @@ const forecast = (latitude, longitude, callback) => {
 
   request({ url, json: true }, (error, { body }) => {
     if (error) {
-      callback("Unable to connect to weather service.", undefined);
+      callback("Erro de conecção.", undefined);
     } else if (body.error) {
-      callback("Unable to find location", undefined);
+      callback("Localização não encontrada", undefined);
     } else {
       const { temperature, precipProbability } = body.currently;
       const { summary } = body.daily.data[0];

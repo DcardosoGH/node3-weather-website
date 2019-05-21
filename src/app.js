@@ -37,7 +37,7 @@ app.get("/about", (req, res) => {
 app.get("/weather", (req, res) => {
   if (!req.query.address) {
     return res.send({
-      error: "You must provide an address!"
+      error: "Por favor introduza um endereço válido."
     });
   }
 
@@ -70,5 +70,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server running at port" + port);
+  console.log("Server running at port " + port);
 });
